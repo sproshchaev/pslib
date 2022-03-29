@@ -10,7 +10,7 @@ import java.util.Date;
  * Класс PSLibTests выполняет Модульное тестирование JUnit класса PSLib
  *
  * @author Sergey Proshchaev
- * @version 1.0
+ * @version 1.1
  * @see com.prosoft.PSLib
  */
 public class PSLibTests extends TestCase {
@@ -44,5 +44,15 @@ public class PSLibTests extends TestCase {
         Assert.assertEquals(PSLib.dateTimeToStr(), resultExpected);
         Assert.assertEquals(PSLib.dateTimeToStr().length(), 19);
     }
+
+    /**
+     * Метод testSubString() выполняет Модульное тестирование JUnit
+     * метода subString() класса PSLib
+     */
+    public void testSubString() {
+        String resultExpected = "123";
+        Assert.assertEquals(PSLib.subString("012345678", 1, 3), resultExpected);
+    }
+
 
 }
