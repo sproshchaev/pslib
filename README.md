@@ -18,6 +18,7 @@ PSLib — library of frequently used methods
 
   1) Add to POM.xml
 
+  <!--
   <repositories>
 
     <repository>
@@ -37,6 +38,8 @@ PSLib — library of frequently used methods
       <version>1.1</version>
   </dependency>
 
+  -->
+  
   2) Reload All Maven Projects
 
 ### Contribution guidelines ###
