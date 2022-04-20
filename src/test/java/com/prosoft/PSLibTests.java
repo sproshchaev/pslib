@@ -1,19 +1,10 @@
 package com.prosoft;
 
 import junit.framework.TestCase;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
-import static com.prosoft.PSLib.*;
 
 /**
  * Класс PSLibTests выполняет Модульное тестирование JUnit класса PSLib
@@ -23,6 +14,16 @@ import static com.prosoft.PSLib.*;
  * @see com.prosoft.PSLib
  */
 public class PSLibTests extends TestCase {
+
+    /**
+     * Метод testVersion() выполняет Модульное тестирование JUnit
+     * метода version() класса PSLib
+     */
+    public void testVersion() {
+        String resultExpected = "1.2";
+        Assert.assertEquals(PSLib.version(), resultExpected);
+        Assert.assertEquals(PSLib.version().length(), 3);
+    }
 
     /**
      * Метод testDateToStr() выполняет Модульное тестирование JUnit

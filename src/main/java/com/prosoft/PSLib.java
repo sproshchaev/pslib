@@ -4,7 +4,14 @@ import org.apache.poi.ss.format.CellFormatType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -16,6 +23,25 @@ import java.util.Date;
  * @version 1.1
  */
 public class PSLib {
+
+    /**
+     * Метод version() использует DOM (Document Object Model) для чтения данных из XML-файла
+     * @return текущая версия, опубликованная в репозитории GitHub
+     */
+    static String version() {
+
+        // Найти строку
+        // Получение фабрики, чтобы после получить билдер документов.
+        // DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+        // Получили из фабрики билдер, который парсит XML, создает структуру Document в виде иерархического дерева.
+        //DocumentBuilder builder = factory.newDocumentBuilder();
+
+        // Запарсили XML, создав структуру Document. Теперь у нас есть доступ ко всем элементам, каким нам нужно.
+        //Document document = builder.parse(new File("pom.xml"));
+
+       return "1.2";
+    }
 
     /**
      * Метод writeToCell записывает значение в ячейку листа MS Excel
