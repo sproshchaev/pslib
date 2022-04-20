@@ -40,7 +40,7 @@ public class PSLib {
         // Запарсили XML, создав структуру Document. Теперь у нас есть доступ ко всем элементам, каким нам нужно.
         //Document document = builder.parse(new File("pom.xml"));
 
-       return "1.2";
+       return "version 1.2";
     }
 
     /**
