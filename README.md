@@ -1,6 +1,10 @@
-# README #
+[![Java](https://img.shields.io/badge/Java-E43222??style=for-the-badge&logo=java&logoColor=FFFFFF)](https://java.com/)
+[![Apache_POI](https://img.shields.io/badge/Apache_POI-F7F7F7??style=for-the-badge&logo=Apache&logoColor=C85D38)](https://poi.apache.org/)
 
-PSLib — library of frequently used methods
+#PSLib 
+
+Maven Repository на Github (library of frequently used methods)
+https://bit.ly/3vyf78C
 
 ### What is this repository for? ###
 
@@ -37,7 +41,6 @@ PSLib — library of frequently used methods
       <artifactId>PSLib</artifactId>
       <version>1.1</version>
   </dependency>
-
   -->
   
   2) Reload All Maven Projects
