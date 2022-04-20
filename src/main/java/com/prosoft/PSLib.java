@@ -28,7 +28,7 @@ public class PSLib {
      * Метод version() использует DOM (Document Object Model) для чтения данных из XML-файла
      * @return текущая версия, опубликованная в репозитории GitHub
      */
-    static String version() {
+    public static String version() {
 
         // Найти строку
         // Получение фабрики, чтобы после получить билдер документов.
