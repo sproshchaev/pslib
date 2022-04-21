@@ -11,6 +11,7 @@ Maven Repository на Github (library of frequently used methods)
 1. Перейти в ветку "main"
 2. Пройти тесты в окне "Terminal" ввести: "mvn test"
 3. Опубликовать в Github в окне "Terminal" ввести: "mvn clean deploy"
+4. Создать документацию Javadoc для проекта "mvn javadoc:javadoc"
 
 ### Подключение зависимости в новых проектах:
 1. Добавить в pom.xml ссылку на репозиторий на Github: id="PSLib", url="https://raw.github.com/sproshchaev/PSLib/main/"

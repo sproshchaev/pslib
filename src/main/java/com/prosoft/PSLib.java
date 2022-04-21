@@ -5,12 +5,12 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,22 +25,41 @@ import java.util.Date;
 public class PSLib {
 
     /**
-     * Метод version() использует DOM (Document Object Model) для чтения данных из XML-файла
+     * Метод version() использует DOM (Document Object Model) для чтения данных из XML-файла,
+     * результат получает из pom.xml "version"
+     *
      * @return текущая версия, опубликованная в репозитории GitHub
      */
     public static String version() {
 
-        // Найти строку
-        // Получение фабрики, чтобы после получить билдер документов.
-        // DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        String resultString = null;
 
-        // Получили из фабрики билдер, который парсит XML, создает структуру Document в виде иерархического дерева.
-        //DocumentBuilder builder = factory.newDocumentBuilder();
+        try {
 
-        // Запарсили XML, создав структуру Document. Теперь у нас есть доступ ко всем элементам, каким нам нужно.
-        //Document document = builder.parse(new File("pom.xml"));
+            DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document document = documentBuilder.parse("pom.xml");
 
-       return "version 1.2";
+            Node root = document.getDocumentElement();
+            NodeList nodeList = root.getChildNodes();
+
+            for (int i = 0; i < nodeList.getLength(); i++) {
+
+                Node node = nodeList.item(i);
+
+                if (node.getNodeName().contains("version")) {
+                    resultString = "version " + node.getTextContent();
+                }
+            }
+
+        } catch (ParserConfigurationException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (org.xml.sax.SAXException ex) {
+            throw new RuntimeException(ex);
+        }
+
+        return resultString;
     }
 
     /**

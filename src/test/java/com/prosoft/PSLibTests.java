@@ -20,9 +20,8 @@ public class PSLibTests extends TestCase {
      * метода version() класса PSLib
      */
     public void testVersion() {
-        String resultExpected = "version 1.2";
-        Assert.assertEquals(PSLib.version(), resultExpected);
-        Assert.assertEquals(PSLib.version().length(), 11);
+        Assert.assertEquals(PSLib.version().contains("version"), true);
+        Assert.assertEquals(PSLib.version().contains("."), true);
     }
 
     /**
