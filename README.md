@@ -14,9 +14,9 @@ Maven Repository на Github (library of frequently used methods)
 4. Создать документацию Javadoc для проекта "mvn javadoc:javadoc"
 
 ### Подключение зависимости в новых проектах:
-1. Добавить в pom.xml ссылку на репозиторий на Github: id="PSLib", url="https://raw.github.com/sproshchaev/PSLib/main/"
+1. Добавить в pom.xml ссылку на репозиторий на Github: 
 
-<!--   
+<!--
   <repositories>
 
     <repository>
@@ -30,8 +30,21 @@ Maven Repository на Github (library of frequently used methods)
 
   </repositories> 
 -->
+<pre><code>  &lt;repositories&gt;
 
-2. Добавить в pom.xml зависимость: groupId="com.prosoft", artifactId="PSLib", version="X.X"
+    &lt;repository&gt;
+      &lt;id&gt;PSLib&lt;/id&gt;
+      &lt;url&gt;https://raw.github.com/sproshchaev/PSLib/main/&lt;/url&gt;
+      &lt;snapshots&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
+      &lt;/snapshots&gt;
+    &lt;/repository&gt;
+
+  &lt;/repositories&gt; 
+</code></pre>
+
+2. Добавить в pom.xml зависимость: 
 
 <!--
     <dependency>
@@ -40,6 +53,13 @@ Maven Repository на Github (library of frequently used methods)
       <version>1.2</version>
     </dependency> 
 -->
+
+<pre><code>    &lt;dependency&gt;
+      &lt;groupId&gt;com.prosoft&lt;/groupId&gt;
+      &lt;artifactId&gt;PSLib&lt;/artifactId&gt;
+      &lt;version&gt;1.2&lt;/version&gt;
+    &lt;/dependency&gt; 
+</code></pre>
 
 3. Проверить актуальную версию в "version". Номер версии должен соответствовать актуальной! 
 
