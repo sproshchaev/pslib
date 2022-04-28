@@ -5,8 +5,6 @@
 
 Maven Repository на Github (library of frequently used methods)
 
-Как сделать свой Maven Repository на Github? https://bit.ly/3vyf78C
-
 ### Публикация (deploy) в репозитории Github 
 1. Перейти в ветку "main"
 2. Пройти тесты в окне "Terminal" ввести: "mvn test"
@@ -30,6 +28,7 @@ Maven Repository на Github (library of frequently used methods)
 
   </repositories> 
 -->
+
 <pre><code>  &lt;repositories&gt;
 
     &lt;repository&gt;
@@ -65,4 +64,9 @@ Maven Repository на Github (library of frequently used methods)
 
 4. Запустить в меню IDE IntelliJ IDEA "Reload All Maven Projects"
 
+### Статьи по теме
+Как сделать свой Maven Repository на Github? https://bit.ly/3vyf78C
+
+
 <!-- Пример проекта для тестирования Java\IDEAProjects2 (класс PSLibTest) -->
+
