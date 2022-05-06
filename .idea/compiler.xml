@@ -9,5 +9,8 @@
         <module name="PSLib" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="host-maven-repo-example" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
