@@ -147,4 +147,10 @@ public class PSLib {
         return string.substring(start, start + count);
     }
 
+    public static String subString2(String string, int start, int count) {
+
+        return string.substring(start, start + count);
+    }
+
+
 }

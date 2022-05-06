@@ -65,7 +65,8 @@ Maven Repository на Github (library of frequently used methods)
 4. Запустить в меню IDE IntelliJ IDEA "Reload All Maven Projects"
 
 ### Статьи по теме
-Как сделать свой Maven Repository на Github? https://bit.ly/3vyf78C
+1. Hosting a Maven Repository on GitHub https://www.baeldung.com/maven-repo-github
+2. Как сделать свой Maven Repository на Github? https://bit.ly/3vyf78C
 
 
 <!-- Пример проекта для тестирования Java\IDEAProjects2 (класс PSLibTest) -->
