@@ -147,9 +147,46 @@ public class PSLib {
         return string.substring(start, start + count);
     }
 
-    public static String subString2(String string, int start, int count) {
+    /**
+     * Статический метод checkingExtensionFileName проверяет и корректирует (при необходимости) передаваемое
+     * ему в качестве параметра расширение файла
+     * @param fullFileName полное имя файла вида "C:\file.txt"
+     * @param extFileStr расширение вида "txt", "xlsx" и т.п.
+     * @return
+     */
+    public static String checkingExtensionFileName(String fullFileName, String extFileStr) {
+        String result;
 
-        return string.substring(start, start + count);
+        if (fullFileName.contains("." + extFileStr)) {
+            result = fullFileName;
+        } else {
+
+            if (fullFileName.contains(".") == false) {
+                result = fullFileName + "." + extFileStr;
+            } else {
+                result = fullFileName.substring(0, fullFileName.lastIndexOf(".")) + "." + extFileStr;
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Статический метод shortFileName() возращает короткое имя фала (без полного пути)
+     * @param fullFileName имя файла вида "C:\file.txt"
+     * @return короткое имя файла вида "file.txt"
+     */
+    public static String shortFileName(String fullFileName) {
+        String result;
+
+        //if (fullFileName.contains(".") && (fullFileName.contains(":"))) {
+        if (fullFileName.contains(".")) {
+
+            result = fullFileName.substring(fullFileName.lastIndexOf("\\") + 1);
+        } else {
+            result = fullFileName;
+        }
+
+        return result;
     }
 
 

@@ -63,5 +63,28 @@ public class PSLibTests extends TestCase {
         Assert.assertEquals(PSLib.subString("012345678", 1, 3), resultExpected);
     }
 
+    /**
+     * Метод testCheckingExtensionFileName() выполняет Модульное тестирование JUnit
+     * метода checkingExtensionFileName() класса PSLib
+     */
+    public void testCheckingExtensionFileName() {
+        String resultExpected = "file.txt";
+        Assert.assertEquals(PSLib.checkingExtensionFileName("file.txt", "txt"), resultExpected);
+        String resultExpected2 = "C:\\file.txt";
+        Assert.assertEquals(PSLib.checkingExtensionFileName("C:\\file.txt", "txt"), resultExpected2);
+        Assert.assertEquals(PSLib.checkingExtensionFileName("C:\\file", "txt"), resultExpected2);
+        Assert.assertEquals(PSLib.checkingExtensionFileName("C:\\file.xls", "txt"), resultExpected2);
+    }
+
+    /**
+     * Метод testShortFileName() выполняет Модульное тестирование JUnit
+     * метода shortFileName() класса PSLib
+     */
+    public void testShortFileName() {
+        String resultExpected = "file.txt";
+        Assert.assertEquals(PSLib.shortFileName("C:\\file.txt"), resultExpected);
+        Assert.assertEquals(PSLib.shortFileName("file.txt"), resultExpected);
+        Assert.assertEquals(PSLib.shortFileName("\\work\\file.txt"), resultExpected);
+    }
 
 }
