@@ -67,6 +67,7 @@ Maven Repository на Github (library of frequently used methods)
 ### Статьи по теме
 1. Hosting a Maven Repository on GitHub https://www.baeldung.com/maven-repo-github
 2. Как сделать свой Maven Repository на Github? https://bit.ly/3vyf78C
+3. Изучаем Java на примерах и задачах Сеттер Р. https://bit.ly/3xssisR
 
 
 <!-- Пример проекта для тестирования Java\IDEAProjects2 (класс PSLibTest) -->
