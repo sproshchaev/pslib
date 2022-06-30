@@ -72,38 +72,36 @@ public class PSLib {
      * @param - byte valueType типа значения в ячейке: 1 - NUMBER, 2 - DATE, 4 - TEXT
      */
     static void writeToCell(XSSFSheet excelSheet, int row, int column, String value, int valueType) {
-
         XSSFRow rowObj;
         XSSFCell cellObj;
-
         if (excelSheet.getRow(row) == null) {
             rowObj = excelSheet.createRow((short) row);
         } else {
             rowObj = excelSheet.getRow((short) row);
         }
-
         if (rowObj.getCell(column) == null) {
             cellObj = rowObj.createCell(column);
         } else {
             cellObj = rowObj.getCell(column);
         }
-
-        switch (valueType) {
-            case 1:
-                cellObj.setCellType(CellFormatType.NUMBER.ordinal());
-                cellObj.setCellValue(Double.valueOf(value));
-                break;
-            case 2:
-                cellObj.setCellType(CellFormatType.DATE.ordinal());
-                cellObj.setCellValue(value);
-                break;
-            case 4:
-                cellObj.setCellType(CellFormatType.TEXT.ordinal());
-                cellObj.setCellValue(value);
-                break;
-            default:
-                cellObj.setCellType(CellFormatType.TEXT.ordinal());
-                cellObj.setCellValue(value);
+        if ((value != null) && (!value.equals(""))) {
+            switch (valueType) {
+                case 1:
+                    cellObj.setCellType(CellFormatType.NUMBER.ordinal());
+                    cellObj.setCellValue(Double.valueOf(value));
+                    break;
+                case 2:
+                    cellObj.setCellType(CellFormatType.DATE.ordinal());
+                    cellObj.setCellValue(value);
+                    break;
+                case 4:
+                    cellObj.setCellType(CellFormatType.TEXT.ordinal());
+                    cellObj.setCellValue(value);
+                    break;
+                default:
+                    cellObj.setCellType(CellFormatType.TEXT.ordinal());
+                    cellObj.setCellValue(value);
+            }
         }
     }
 
